@@ -1,0 +1,67 @@
+Test Case ID,Test Case Name,Description,Test Data,Preconditions,Test Steps,Expected Result,Pass/Fail Criteria
+TC_001,Compose Email - Positive Scenario,Verify sending a composed email with valid data,"Recipient: test@example.com, Subject: 'Incubyte', Body: 'QA test for Incubyte'",User is logged in to Gmail,"1. Click Compose
+2. Enter valid data
+3. Click Send",Email is sent successfully,PASS
+TC_002,Invalid Email Address,Verify Gmail detects an invalid email address,"Recipient: 'invalid-email', Subject: 'Incubyte', Body: 'QA test for Incubyte'",User is logged in to Gmail,"1. Click Compose
+2. Enter invalid email
+3. Click Send",after click on send Gmail should show an invalid email error,PASS
+TC_003,Empty Subject Field,Verify sending an email without a subject,"Recipient: test@example.com, Subject: (empty), Body: 'QA test for Incubyte'",User is logged in to Gmail,"1. Click Compose
+2. Leave subject empty
+3. Click Send",Gmail should prompt for a subject,FAIL
+TC_004,Empty Body Field,Verify sending an email with an empty body,"Recipient: test@example.com, Subject: 'Incubyte', Body: (empty)",User is logged in to Gmail,"1. Click Compose
+2. Leave body empty
+3. Click Send",Email is sent successfully,FAIL
+TC_005,Empty Recipient Field,Verify Gmail detects an empty recipient field,"Recipient: (empty), Subject: 'Incubyte', Body: 'QA test for Incubyte'",User is logged in to Gmail,"1. Click Compose
+2. Leave recipient empty
+3. Click Send",Gmail should show an error for empty recipient atleast add one  recipient,PASS
+TC_006,Invalid Subject Field,Verify Gmail detects an invalid subject,"Recipient: test@example.com, Subject: '$#%@', Body: 'QA test for Incubyte'",User is logged in to Gmail,"1. Click Compose
+2. Enter invalid subject
+3. Click Send",Gmail should accept the subject,PASS
+TC_007,Compose Email - Multiple Recipients,Verify Gmail handles multiple recipients,"Recipient: 'test1@example.com, test2@example.com', Subject: 'Incubyte', Body: 'QA test for Incubyte'",User is logged in to Gmail,"1. Click Compose
+2. Enter multiple recipients
+3. Click Send",Email should be sent to multiple recipients,PASS
+TC_008,Compose Email - CC and BCC,Verify Gmail allows adding CC and BCC fields,"Recipient: test@example.com, CC: cc@example.com, BCC: bcc@example.com, Subject: 'Incubyte', Body: 'QA test for Incubyte'",User is logged in to Gmail,"1. Click Compose
+2. Add CC and BCC
+3. Click Send",Email should be sent with CC and BCC,PASS
+TC_009,Attach File to Email,Verify Gmail allows attachment of files,"Recipient: test@example.com, Subject: 'Incubyte', Body: 'QA test for Incubyte', Attachment: file.pdf",User is logged in to Gmail,"1. Click Compose
+2. Attach file
+3. Click Send",Email should be sent with attachment,PASS
+TC_010,Max Length Subject Field,Verify Gmail handles maximum length of the subject,"Recipient: test@example.com, Subject: {500 letters} Body: 'QA test for Incubyte'",User is logged in to Gmail,"1. Click Compose
+2. Enter max length subject
+3. Click Send",Email should be sent with max-length subject,PASS
+TC_011,Compose Email - Valid Email,Verify Gmail can send an email with valid subject and body,"Recipient: test@validemail.com, Subject: 'Incubyte', Body: 'Valid Email Test'",User is logged in to Gmail,"1. Click Compose
+2. Enter valid data
+3. Click Send",Email is sent successfully,PASS
+TC_012,Attach Multiple Files,Verify Gmail handles multiple attachments,"Recipient: test@example.com, Subject: 'Incubyte', Body: 'Multiple Attachments', Attachments: file1.pdf, file2.jpg",User is logged in to Gmail,"1. Click Compose
+2. Attach multiple files
+3. Click Send",Email should be sent with multiple attachments,PASS
+TC_013,Compose Email - No Subject,Verify Gmail sends email without subject (optional field),"Recipient: test@example.com, Subject: (empty), Body: 'No Subject Email'",User is logged in to Gmail,"1. Click Compose
+2. Leave subject empty
+3. Click Send",Email is sent with no subject,PASS
+TC_014,Compose Email - Quick Send,Verify Gmail can send emails quickly without delays,"Recipient: test@example.com, Subject: 'Quick Test', Body: 'Quick Email Test'",User is logged in to Gmail,"1. Click Compose
+2. Enter data
+3. Click Send",Email is sent successfully and quickly,PASS
+TC_015,Invalid Recipient Email,Verify Gmail shows error when recipient email is invalid,"Recipient: 'test@invalid', Subject: 'Incubyte', Body: 'QA test for Incubyte'",User is logged in to Gmail,"1. Click Compose
+2. Enter invalid recipient
+3. Click Send",Error message should show invalid email format,PASS
+TC_016,Empty Body Field,Verify Gmail detects empty body for required field,"Recipient: test@example.com, Subject: 'Incubyte', Body: (empty)",User is logged in to Gmail,"1. Click Compose
+2. Leave body empty
+3. Click Send",Gmail allows sending empty body,PASS
+TC_017,Invalid Characters in Subject,Verify Gmail detects invalid characters in subject,"Recipient: test@example.com, Subject: 'Test<>&', Body: 'QA test for Incubyte'",User is logged in to Gmail,"1. Click Compose
+2. Enter invalid characters in subject
+3. Click Send",Email should be sent successfully,PASS
+TC_018,Invalid Special Characters in Body,Verify Gmail handles special characters in the body,"Recipient: test@example.com, Subject: 'Incubyte', Body: 'Test<>&$#@'",User is logged in to Gmail,"1. Click Compose
+2. Enter special characters in body
+3. Click Send",Gmail should allow special characters,PASS
+TC_019,Max Length Body Field,Verify Gmail handles maximum length of the body,"Recipient: test@example.com, Subject: 'Incubyte', Body: (max length)",User is logged in to Gmail,"1. Click Compose
+2. Enter max-length body 500 letters or lines
+3. Click Send",Email should be sent with max-length body,PASS
+TC_020,Max  Recipient Field  (500 per day per mail or per receipt),Verify Gmail handles maximum number of recipients,"Recipient: (add 500 per mail) or send to 500 recepeints, Subject: 'Incubyte', Body: 'QA test for Incubyte'",User is logged in to Gmail,"1. Click Compose
+2. Add max number of recipients 500
+3. Click Send",Email should be sent to all 500 recipients but after that not able to send email for that day error you should be able to send emails again within 1 to 24 hours.,PASS
+TC_021,Max Size Email Attachment(25 mb expected),Verify Gmail handles attachments up to the maximum size 25mb,"Recipient: test@example.com, Subject: 'Incubyte', Body: 'QA test for Incubyte', Attachment: (25mb attachment)",User is logged in to Gmail,"1. Click Compose
+2. Attach 25 mb size file
+3. Click Send",Email should be sent with attachment,PASS
+TC_022,Max Size of Email (26 mb not expected),Verify Gmail should not handles size more than 25 mb,"Recipient: test@example.com, Subject: 'Incubyte', Body: 'QA test for Incubyte', Attachment: (check  26  mb attachment)",User is logged in to Gmail,"1. Click Compose
+2. Attach 26 mb file
+3. Click Send",Email should not be sent with attachment,PASS
