@@ -1,0 +1,36 @@
+
+{
+"HomePage" : {
+
+    "createAccountButton": "(//a[text()='Create an Account'])[1]",
+    "signInButton": "(//a[contains(text(),'Sign In')])[1]"
+},
+
+"SignUpPage":{
+
+    "firstName": "//input[@id='firstname']",
+    "lastName": "//input[@id='lastname']",
+    "email": "//input[@id='email_address']",
+    "password": "//input[@id='password']",
+    "confirmPassword": "//input[@id='password-confirmation']",
+    "createAccountButton": "//button[@title='Create an Account']"
+    
+  
+},
+
+"MyAccount":{
+    "successMessage": "//div[@class='message-success success message']//div",   
+    "signoutdropdown": "div[class='panel header'] button[class='action switch']",
+    "myProfileText":"//span[@class='logged-in'][1]",
+    "dropDownButton":"(//button[@type='button'])[1]",
+    "signOut":"(//a[normalize-space()='Sign Out'])[1]"
+  
+},
+
+"SignInPage" : {
+    "email": "//input[@id='email']",
+    "password": "(//input[@id='pass'])[1]",
+    "signInButton":"(//span[normalize-space()='Sign In'])[1]"
+    
+}
+}

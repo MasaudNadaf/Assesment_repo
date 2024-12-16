@@ -1,0 +1,33 @@
+{
+  "name": "com.incubyte.magento-project",
+  "version": "1.0.0",
+  "description": "Cypress Cucumber Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "headTest": "npm run test --headed",
+    "chromeTest": "npm run test --browser chrome"
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumberReports/results.json"
+    }
+  },
+  "author": "Murali",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.16.1",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-xpath": "^2.0.1",
+    "mocha": "^10.1.0",
+    "multiple-cucumber-html-reporter": "^3.8.0",
+    "neat-csv": "5.1.0"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^21.0.2",
+    "@cypress/browserify-preprocessor": "latest",
+    "cypress-iframe": "^1.0.1"
+  
+  }
+}
